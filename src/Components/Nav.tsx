@@ -1,7 +1,7 @@
 import Logo from '../assets/logo-text.png'
 const Nav = () => {
     return (
-        <nav>
+        <nav className='py-4 border-2 border-gray-100'>
         <div className='flex justify-between items-center container mx-auto'>
             <img src={Logo} alt="" />
             <ul className='flex gap-4 text-[#475569] text-md'>
@@ -13,7 +13,7 @@ const Nav = () => {
             </ul>
             <div>
                 <button className='btn rounded-3xl text-[#475569]'>Sign In</button>
-                <button className='btn bg-[#D91B7E] text-white rounded-3xl'>Sign Up</button>
+                <button className='btn bg-[#D91B7E] text-white rounded-full'>Sign Up</button>
             </div>
             
         </div>
