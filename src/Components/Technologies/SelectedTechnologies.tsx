@@ -22,7 +22,7 @@ const SelectedTechnologies = ({ setSelectedTechnologies, selectedTechnologies }:
     }
     return (
         <div>
-         <p className="text-[#94A3B8] text-xs"><span></span>Technology Selected</p>
+         <p className="text-[#94A3B8] text-xs"><span>{selectedTechnologies.length} </span>Technology Selected</p>
             {
                 selectedTechnologies.map((technology:Itechnology, index:number)=>{
                     return <SelectedTechnologiesCard key={index} technology={technology}
