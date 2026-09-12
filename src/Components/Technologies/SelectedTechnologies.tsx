@@ -1,6 +1,6 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { Itechnology } from "../../Type/technology";
-import { MdCancel } from "react-icons/md";
+import SelectedTechnologiesCard from "./SelectedTechnologiesCard";
 
 export interface SelectedTechnologiesProps {
    selectedTechnologies : Itechnology[]
@@ -22,20 +22,13 @@ const SelectedTechnologies = ({ setSelectedTechnologies, selectedTechnologies }:
          <p className="text-[#94A3B8] text-xs"><span></span>Technology Selected</p>
             {
                 selectedTechnologies.map((technology:Itechnology, index:number)=>{
-                    return <div className="grid grid-cols-1 my-2">
-                        <div className="flex justify-between items-center border rounded-md p-2 border-gray-300">
-                        <div className="flex items-center gap-2">
-                        <img src={technology.icon} className="h-[30px] w-[30px]" alt="" />
-                         <div>
-                            <h2 className="text-sm font-semibold">{technology.name}</h2>
-                            <p className="text-xs text-[#94A3B8]">{technology.category}</p>
-                         </div>
-                        </div>
-                        <button><MdCancel /></button>
-                    </div>
-                    </div>
+                    return <SelectedTechnologiesCard key={index} technology={technology}
+                    selectedTechnologies={selectedTechnologies} 
+                    setSelectedTechnologies={setSelectedTechnologies}/>
                 })
             }
+         <button className="btn mt-6 w-full border border-red-400 text-red-500">Remove All</button>
+
         </div>
     )
 }
