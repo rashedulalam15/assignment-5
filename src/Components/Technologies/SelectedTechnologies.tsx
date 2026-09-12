@@ -8,6 +8,9 @@ export interface SelectedTechnologiesProps {
 }
 
 const SelectedTechnologies = ({ setSelectedTechnologies, selectedTechnologies }: SelectedTechnologiesProps) => {
+    const handleRemoveAllTechnologies=()=>{
+        setSelectedTechnologies([])
+    }
     if(selectedTechnologies.length===0){
         return <div>
             <p className="text-[#94A3B8] text-xs">No technologies selected yet.</p>
@@ -27,7 +30,8 @@ const SelectedTechnologies = ({ setSelectedTechnologies, selectedTechnologies }:
                     setSelectedTechnologies={setSelectedTechnologies}/>
                 })
             }
-         <button className="btn mt-6 w-full border border-red-400 text-red-500">Remove All</button>
+         <button onClick={()=>handleRemoveAllTechnologies()} className="btn mt-6 w-full
+          border border-red-400 text-red-500">Remove All</button>
 
         </div>
     )
