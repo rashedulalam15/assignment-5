@@ -28,7 +28,8 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
                  }
               </div>
               {/* selectedTechnologies 30% */}
-              <div className=" col-span-3">
+              <div className="bg-base-100 shadow-sm p-2 col-span-3">
+                <h2 className="font-semibold text-2xl">Your Stack</h2>
               <SelectedTechnologies selectedTechnologies={selectedTechnologies}
               setSelectedTechnologies={setSelectedTechnologies} />
               </div>
