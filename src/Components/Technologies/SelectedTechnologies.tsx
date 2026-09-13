@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { Itechnology } from "../../Type/technology";
 import SelectedTechnologiesCard from "./SelectedTechnologiesCard";
+import { toast } from "react-toastify";
 
 export interface SelectedTechnologiesProps {
    selectedTechnologies : Itechnology[]
@@ -10,6 +11,7 @@ export interface SelectedTechnologiesProps {
 const SelectedTechnologies = ({ setSelectedTechnologies, selectedTechnologies }: SelectedTechnologiesProps) => {
     const handleRemoveAllTechnologies=()=>{
         setSelectedTechnologies([])
+         toast.info("All technologies removed from the stack!")
     }
     if(selectedTechnologies.length===0){
         return <div>

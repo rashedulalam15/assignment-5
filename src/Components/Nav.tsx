@@ -1,10 +1,12 @@
+import { FaBars } from 'react-icons/fa'
 import Logo from '../assets/logo-text.png'
 const Nav = () => {
     return (
         <nav className='sticky top-0 z-50 py-4 bg-white border-2 border-gray-100'>
-        <div className='flex justify-between items-center container mx-auto'>
+        <div className='flex justify-between items-center container mx-auto px-4'>
+            <button className='md:hidden'><FaBars /></button>
             <img src={Logo} alt="" />
-            <ul className='flex gap-4 text-[#475569] text-md'>
+            <ul className='hidden md:flex gap-4 text-[#475569] text-md'>
                 <li><a href="">Home</a></li>
                 <li><a href="">Technologies</a></li>
                 <li><a href="">Projects</a></li>

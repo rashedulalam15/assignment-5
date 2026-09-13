@@ -11,10 +11,15 @@ export interface TechnologyCardProps {
 const TechnologyCard = ({ technology, selectedTechnologies, setSelectedTechnologies }: TechnologyCardProps) => {
     const [isSelected, setIsSelected] = useState(false)
     useEffect(()=>{
-        const isExist = selectedTechnologies.some(selectedTechnologie=>selectedTechnologie.id === technology.id)
+        const isExist = selectedTechnologies.some(selectedTechnology=>selectedTechnology.id === technology.id)
         setIsSelected(isExist)
     },[selectedTechnologies,technology.id])
     const handleAddToStack =()=>{
+        const isAlreadyExist = selectedTechnologies.some(selectedTechnology=>selectedTechnology.id === technology.id)
+        if(isAlreadyExist){
+            toast.warning(`${technology.name} is already in the stack!`)
+            return
+        }
      setIsSelected(true)
         
      setSelectedTechnologies([...selectedTechnologies,technology])

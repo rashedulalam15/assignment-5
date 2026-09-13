@@ -37,7 +37,13 @@ modern software.</p>
                 </div>
             </div>
         </div>
-        <p className='my-4 text-xs text-[#64748B] text-center'>© 2026 Dev Stack. All rights reserved.</p>
+        <div className='flex justify-between items-center my-4 container mx-auto'>
+        <p className='text-xs text-[#64748B]'>© 2026 Dev Stack. All rights reserved.</p>
+        <ul className='flex gap-2 text-xs text-[#64748B]'>
+           <li><a href="">Privacy</a></li>
+           <li><a href="">Terms</a></li>
+        </ul>
+        </div>
         </div>
     );
 };

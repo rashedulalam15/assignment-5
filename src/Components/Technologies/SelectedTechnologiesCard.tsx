@@ -1,6 +1,7 @@
 import { MdCancel } from "react-icons/md";
 import type { Itechnology } from "../../Type/technology";
 import type { Dispatch, SetStateAction } from "react";
+import { toast } from "react-toastify";
 
 export interface SelectedTechnologiesCardProps {
     technology: Itechnology
@@ -10,8 +11,9 @@ export interface SelectedTechnologiesCardProps {
 
 const SelectedTechnologiesCard = ({ technology, selectedTechnologies,setSelectedTechnologies }: SelectedTechnologiesCardProps) => {
     const handleDeleteTechnologies =(technology:Itechnology)=>{
-            const restTechnologies= selectedTechnologies.filter(selectedTechnology=>selectedTechnology.name !== technology.name)
+            const restTechnologies= selectedTechnologies.filter(selectedTechnology=>selectedTechnology.id !== technology.id)
             setSelectedTechnologies(restTechnologies)
+            toast.info(`${technology.name} removed from the stack!`)
     }
     return (
         <div className="grid grid-cols-1 my-2">

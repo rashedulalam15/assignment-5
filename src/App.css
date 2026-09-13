@@ -1,0 +1,16 @@
+:root {
+  --brand-gradient: linear-gradient(to right, #ff5722, #d81b7e, #7c3aed);
+}
+
+.brand-gradient {
+  background: var(--brand-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.brand-button {
+  background: var(--brand-gradient);
+  color: white;
+  border: none;
+}
